@@ -9,5 +9,6 @@
       "schedule:weekly"
     ]
   },
-  "labels": ["dependencies"],
+  "dependencyDashboard": true,
+  "labels": ["dependencies"]
 }
