@@ -28,10 +28,14 @@
 
       defaultPackage = forAllSystems (system: self.packages.${system}.nix-serve);
 
-      checks = forAllSystems (system: {
+      checks = forAllSystems (system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
         build = self.defaultPackage.${system};
-        # FIXME: add a proper test.
+      } // nixpkgs.lib.optionalAttrs (pkgs.stdenv.isLinux) {
+        nixos-test = pkgs.callPackage ./nixos-test.nix {
+          nix-serve = self.defaultPackage.${system};
+        };
       });
-
     };
 }
