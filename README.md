@@ -3,6 +3,12 @@
 `nix-serve` is a small utility to serve a Nix store as a binary cache,
 allowing it to be used as a substituter by other Nix installations.
 
+This repository is a fork of https://github.com/edolstra/nix-serve/ to apply
+outstanding patches needed to work with the latest version of nix.
+We may consider archiving this fork again if upstream becomes active again.
+The original author of the fork is also welcome to join this fork instead to
+have shared maintainance over the project.
+
 ## Usage
 
 The instructions below assume a flake-enabled version of Nix.
@@ -10,7 +16,7 @@ The instructions below assume a flake-enabled version of Nix.
 To start `nix-serve`, serving a binary cache on port 5000 of `localhost`:
 
 ```
-# nix run github:edolstra/nix-serve
+# nix run github:nix-community/nix-serve
 ```
 
 You can test whether the server works by running
@@ -27,7 +33,7 @@ documentation](https://metacpan.org/pod/distribution/Starman/script/starman)
 for additional flags you can pass, e.g.
 
 ```
-# nix run github:edolstra/nix-serve -- --access-log /dev/stderr
+# nix run github:nix-community/nix-serve -- --access-log /dev/stderr
 ```
 
 ### Signing
