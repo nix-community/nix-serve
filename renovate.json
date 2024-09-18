@@ -10,5 +10,8 @@
     ]
   },
   "dependencyDashboard": true,
-  "labels": ["dependencies"]
+  "labels": ["dependencies"],
+  "nix": {
+    "enabled": true
+  }
 }
